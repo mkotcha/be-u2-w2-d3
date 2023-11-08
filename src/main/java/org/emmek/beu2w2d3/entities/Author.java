@@ -24,7 +24,7 @@ public class Author {
     private String name;
     private String surname;
     private String email;
-    @JsonFormat(pattern = "dd-MM-YYYY")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate birthDate;
     private String avatar;
 }

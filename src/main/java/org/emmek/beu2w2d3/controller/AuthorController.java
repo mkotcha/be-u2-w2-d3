@@ -4,10 +4,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.emmek.beu2w2d3.entities.Author;
 import org.emmek.beu2w2d3.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/authors")
@@ -17,8 +16,10 @@ public class AuthorController {
     private AuthorService authorService;
 
     @GetMapping("")
-    public List<Author> getAuthors() {
-        return authorService.getAuthors();
+    public Page<Author> getAuthors(@RequestParam(defaultValue = "0") int page,
+                                   @RequestParam(defaultValue = "10") int size,
+                                   @RequestParam(defaultValue = "id") String sort) {
+        return authorService.getAuthors(page, size, sort);
     }
 
 
