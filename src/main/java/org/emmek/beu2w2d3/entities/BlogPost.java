@@ -25,6 +25,7 @@ public class BlogPost {
     private int readTime;
     @ManyToOne
     @JoinColumn(name = "author_id")
+    @ToString.Exclude
     private Author author;
 
 }

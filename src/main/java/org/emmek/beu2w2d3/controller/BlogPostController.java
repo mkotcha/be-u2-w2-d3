@@ -3,10 +3,9 @@ package org.emmek.beu2w2d3.controller;
 import org.emmek.beu2w2d3.entities.BlogPost;
 import org.emmek.beu2w2d3.services.BlogpostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/blogposts")
@@ -16,8 +15,10 @@ public class BlogPostController {
     private BlogpostService bpService;
 
     @GetMapping("")
-    public List<BlogPost> getBlogPosts() {
-        return bpService.getBlogposts();
+    public Page<BlogPost> getBlogPosts(@RequestParam(defaultValue = "0") int page,
+                                       @RequestParam(defaultValue = "10") int size,
+                                       @RequestParam(defaultValue = "id") String sort) {
+        return bpService.getBlogposts(page, size, sort);
     }
 
     @PostMapping("")

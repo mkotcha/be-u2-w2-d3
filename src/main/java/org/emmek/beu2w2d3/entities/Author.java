@@ -2,6 +2,7 @@ package org.emmek.beu2w2d3.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,6 +18,7 @@ import java.util.List;
 public class Author {
     @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)
     @ToString.Exclude
+    @JsonIgnore
     List<BlogPost> blogPosts;
     @Id
     @GeneratedValue

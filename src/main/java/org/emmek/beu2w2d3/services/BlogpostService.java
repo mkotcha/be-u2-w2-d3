@@ -1,33 +1,44 @@
 package org.emmek.beu2w2d3.services;
 
+import org.emmek.beu2w2d3.entities.Author;
 import org.emmek.beu2w2d3.entities.BlogPost;
 import org.emmek.beu2w2d3.exceptions.NotFoundException;
 import org.emmek.beu2w2d3.repositories.BlogPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @Service
 public class BlogpostService {
 
     @Autowired
     BlogPostRepository bpRepository;
+    @Autowired
+    AuthorService authorService;
 
     public BlogPost save(BlogPost blogpost) {
+        Author author = authorService.findById(blogpost.getAuthor().getId());
+        if (author != null) {
+            blogpost.setAuthor(author);
+        }
         bpRepository.save(blogpost);
         return blogpost;
     }
 
-    public List<BlogPost> getBlogposts() {
-        return bpRepository.findAll();
+    public Page<BlogPost> getBlogposts(int page, int size, String sort) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
+        return bpRepository.findAll(pageable);
     }
 
     public BlogPost findById(int id) throws NotFoundException {
         return bpRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
     }
 
-    public void findByIdAndDelete(int id) {
+    public void findByIdAndDelete(int id) throws MethodArgumentTypeMismatchException {
         bpRepository.deleteById(id);
     }
 
@@ -37,8 +48,8 @@ public class BlogpostService {
         bp.setTitle(blogpost.getTitle());
         bp.setPicture(blogpost.getPicture());
         bp.setContent(blogpost.getContent());
-        bpRepository.save(bp);
-        return bp;
+        bp.setAuthor(blogpost.getAuthor());
+        return bpRepository.save(bp);
     }
 
 }
