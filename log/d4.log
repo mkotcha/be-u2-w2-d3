@@ -9130,3 +9130,21 @@ Caused by: java.time.format.DateTimeParseException: Text 'Tue Nov 07 2023 22:28:
 	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:176) ~[jackson-datatype-jsr310-2.15.3.jar:2.15.3]
 	... 60 common frames omitted
 
+2023-11-08T16:36:10.658+01:00  INFO 115086 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : Starting EpicodeApplication using Java 20.0.2 with PID 115086 (/home/kutch/IdeaProjects/be-u2-w2-d3/target/classes started by kutch in /home/kutch/IdeaProjects/be-u2-w2-d3)
+2023-11-08T16:36:10.660+01:00 DEBUG 115086 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : Running with Spring Boot v3.1.5, Spring v6.0.13
+2023-11-08T16:36:10.661+01:00  INFO 115086 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : The following 1 profile is active: "dev"
+2023-11-08T16:36:12.178+01:00  INFO 115086 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-08T16:36:12.235+01:00  INFO 115086 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-08T16:36:12.237+01:00  INFO 115086 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-08T16:36:13.537+01:00  INFO 115086 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-08T16:36:13.910+01:00  WARN 115086 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-08T16:36:14.206+01:00  INFO 115086 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : Started EpicodeApplication in 4.034 seconds (process running for 4.591)
+2023-11-08T16:46:11.714+01:00  INFO 123690 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : Starting EpicodeApplication using Java 20.0.2 with PID 123690 (/home/kutch/IdeaProjects/be-u2-w2-d3/target/classes started by kutch in /home/kutch/IdeaProjects/be-u2-w2-d3)
+2023-11-08T16:46:11.716+01:00 DEBUG 123690 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : Running with Spring Boot v3.1.5, Spring v6.0.13
+2023-11-08T16:46:11.717+01:00  INFO 123690 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : The following 1 profile is active: "dev"
+2023-11-08T16:46:13.538+01:00  INFO 123690 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-08T16:46:13.576+01:00  INFO 123690 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-08T16:46:13.578+01:00  INFO 123690 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-08T16:46:14.712+01:00  INFO 123690 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-08T16:46:15.138+01:00  WARN 123690 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-08T16:46:15.429+01:00  INFO 123690 --- [restartedMain] org.emmek.beu2w2d3.EpicodeApplication    : Started EpicodeApplication in 4.278 seconds (process running for 4.801)

@@ -8,5 +8,6 @@ import java.util.Optional;
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
 
     Optional<Author> findByEmail(String email);
-    
+
+    //Page<BlogPost> getBlogPostsByAuthorId(int id, Pageable pageable);
 }

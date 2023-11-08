@@ -52,4 +52,8 @@ public class BlogpostService {
         return bpRepository.save(bp);
     }
 
+    public Page<BlogPost> getBlogPostsByAuthorId(int id, int page, int size, String sort) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
+        return bpRepository.getBlogPostsByAuthorId(id, pageable);
+    }
 }
